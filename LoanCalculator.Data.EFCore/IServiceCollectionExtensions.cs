@@ -11,26 +11,26 @@ namespace LoanCalculator.Data.EFCore
     public static class IServiceCollectionExtensions
     {
 
+        // For SQLite
+        //public static void ConfigureSqlLiteDatabase(this IServiceCollection services, String connectionString)
+        //{
+        //    // Configures the context 
+        //    var connection = new SqliteConnection(connectionString);
+        //    connection.Open();
 
-        public static void ConfigureSqlLiteDatabase(this IServiceCollection services, String connectionString)
-        {
-            // Configures the contest
-            var connection = new SqliteConnection(connectionString);
-            connection.Open();
+        //    services.AddDbContext<LoanCalculatorContext>(options =>
+        //        options.UseSqlite(connection)
+        //    );
 
-            services.AddDbContext<LoanCalculatorContext>(options =>
-                options.UseSqlite(connection)
-            );
+        //    // Make sure the database exists
+        //    var builder = new DbContextOptionsBuilder<LoanCalculatorContext>();
+        //    builder.UseSqlite(connection);
 
-            // Make sure the database exists
-            var builder = new DbContextOptionsBuilder<LoanCalculatorContext>();
-            builder.UseSqlite(connection);
-
-            using (var context = new LoanCalculatorContext(builder.Options))
-            {
-                context.Database.EnsureCreated();
-            }
-        }
+        //    using (var context = new LoanCalculatorContext(builder.Options))
+        //    {
+        //        context.Database.EnsureCreated();
+        //    }
+        //}
 
 
         public static void ConfigureRepositories(this IServiceCollection services)

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -38,8 +39,15 @@ namespace LoanCalculator.RazorPages
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connectionString = "DataSource=:memory:";
-            services.ConfigureSqlLiteDatabase(connectionString);
+            // SQLite Connection Management
+            //var connectionString = "DataSource=:memory:";
+            //services.ConfigureSqlLiteDatabase(connectionString);
+
+            // SQL Server Connection Management
+            services.AddDbContext<LoanCalculatorContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
             services.ConfigureRepositories();
 
             var rules = new List<ILoanQualificationRule>()
