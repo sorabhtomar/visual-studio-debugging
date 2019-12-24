@@ -6,7 +6,7 @@ namespace LoanCalculator.RazorPages.Controllers
 {
     public class LoanController : Controller
     {
-        private ILoanApplicationResultRepository loanApplicationRepo;
+        private readonly ILoanApplicationResultRepository loanApplicationRepo;
 
         public LoanController(ILoanApplicationResultRepository repo)
         {
