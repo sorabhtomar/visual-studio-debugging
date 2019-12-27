@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     @*@Math.Round(Model.LoanAmount, 2).ToString("c")*@
-                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", decimal.Parse(@Model.LoanAmount.ToString(), System.Globalization.CultureInfo.InvariantCulture))
+                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", Model.LoanAmount, System.Globalization.CultureInfo.InvariantCulture)
                 </td>
             </tr>
             <tr>
@@ -66,7 +66,7 @@
                     Monthly Payment:
                 </td>
                 <td>
-                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", decimal.Parse(@Model.MonthlyPayment?.ToString(), System.Globalization.CultureInfo.InvariantCulture))
+                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", Model.MonthlyPayment, System.Globalization.CultureInfo.InvariantCulture)
                     @*@Model.MonthlyPayment?.ToString("c")*@
                 </td>
             </tr>

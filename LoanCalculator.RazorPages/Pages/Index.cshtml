@@ -32,11 +32,17 @@
                             <tr>
                                 <td>@item.ResultId</td>
                                 <td>@item.FirstName  @item.LastName</td>
-                                <td class="text-right">@item.LoanAmount.ToString("c")</td>
+                                <td class="text-right">
+                                    @*@item.LoanAmount.ToString("c")*@
+                                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", item.LoanAmount, System.Globalization.CultureInfo.InvariantCulture)
+                                </td>
                                 <td class="text-center">@(item.Approved ? "Approved" : "Denied")</td>
                                 <td>@item.DenialReason</td>
                                 <td class="text-right">@item.InterestRate?.ToString("0.00%")</td>
-                                <td class="text-right">@item.MonthlyPayment?.ToString("c")</td>
+                                <td class="text-right">
+                                    @*@item.MonthlyPayment?.ToString("c")*@
+                                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", item.MonthlyPayment, System.Globalization.CultureInfo.InvariantCulture)
+                                </td>
                             </tr>
                         }
                     </tbody>
