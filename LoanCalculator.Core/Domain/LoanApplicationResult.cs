@@ -35,9 +35,10 @@ namespace LoanCalculator.Core.Domain
 
 
 
-        public static LoanApplicationResult CreateDeniedResult(
-            LoanApplication application, ILoanQualificationRule failedRule)
+        public static LoanApplicationResult CreateDeniedResult(LoanApplication application, IEnumerable<ILoanQualificationRule> failedRules)
         {
+            var denialReasons = String.Join(", ", failedRules.ToList().Select(r => r.RuleName));
+
             return new LoanApplicationResult()
             {
                 FirstName = application.FirstName,
@@ -47,7 +48,7 @@ namespace LoanCalculator.Core.Domain
                 LoanAmount = application.LoanAmount,
                 LoanTerm = application.Term.Years,
                 Approved = false,
-                DenialReason = failedRule.RuleName,
+                DenialReason = denialReasons,
                 ApplicantType = application.ApplicantType
             };
         }

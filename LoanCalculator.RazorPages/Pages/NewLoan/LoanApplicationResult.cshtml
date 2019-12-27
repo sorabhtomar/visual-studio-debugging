@@ -35,7 +35,8 @@ else
                     Amount:
                 </td>
                 <td>
-                    @Model.Result.LoanAmount.ToString("c")
+                    @*@Model.Result.LoanAmount.ToString("c")*@
+                    @String.Format(new System.Globalization.CultureInfo("hi-IN"), "{0:c}", decimal.Parse(@Model.Result.LoanAmount.ToString(), System.Globalization.CultureInfo.InvariantCulture))
                 </td>
             </tr>
             <tr>

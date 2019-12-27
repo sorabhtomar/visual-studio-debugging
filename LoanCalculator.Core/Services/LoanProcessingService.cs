@@ -28,10 +28,10 @@ namespace LoanCalculator.Core.Services
         public LoanApplicationResult ProcessLoan(LoanApplication application)
         {
             // Check loan qualification rules
-            var failingRules = _loanApprovalRules.FirstOrDefault(
+            var failingRules = _loanApprovalRules.Where(
                 rule => rule.CheckLoanApprovalRule(application) == false);
 
-            if (failingRules != null)
+            if (failingRules.Count() > 0)
             {
                 var result = LoanApplicationResult.CreateDeniedResult(application, failingRules);
                 return result;
