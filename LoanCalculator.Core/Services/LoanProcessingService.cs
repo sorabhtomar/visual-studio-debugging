@@ -55,7 +55,7 @@ namespace LoanCalculator.Core.Services
             // Premiere bankers discount
             if(application.ApplicantType.ToLower() == "premiere")
             {
-                return rate.InterestRate + 0.1;
+                return rate.InterestRate - 0.01;
             }
 
             return rate.InterestRate;
