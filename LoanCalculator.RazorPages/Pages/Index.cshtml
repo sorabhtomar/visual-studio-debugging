@@ -68,7 +68,7 @@
                                         Loan Type
                                     </th>
                                     <th>
-                                        Rate
+                                        Min. Rate
                                     </th>
                                 </tr>
                             </thead>
@@ -80,7 +80,7 @@
                                             @item.Label
                                         </td>
                                         <td>
-                                            @String.Format("{0:P2}.", item.MinRate)
+                                            @String.Format("{0:P2}", item.MinRate)
                                         </td>
                                     </tr>
                                 }
@@ -120,7 +120,7 @@
                                             @Html.DisplayFor(modelItem => item.UpperCreditScore)
                                         </td>
                                         <td>
-                                            @String.Format("{0:P2}.", item.InterestRate)
+                                            @String.Format("{0:P2}", item.InterestRate)
                                         </td>
                                     </tr>
                                 }
@@ -134,7 +134,7 @@
     <div class="col-md-4">
         <div class="card">
             <div class="card-header">
-                We're growing!
+                We're growing fast!
             </div>
             <img src="~/images/grow.jpg" class="card-img-top">
             <div class="card-body">
@@ -149,7 +149,7 @@
 
             </div>
             <div class="card-footer">
-                <a class="card-link float-right" asp-area="" asp-page="/NewLoan/Create">Create a Loan</a>
+                <a class="card-link float-right" asp-area="" asp-page="/NewLoan/Create">Create a New Loan</a>
             </div>
         </div>
         <br />

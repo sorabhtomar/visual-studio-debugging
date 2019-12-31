@@ -71,17 +71,17 @@ namespace LoanCalculator.Data.EFCore.Migrations
                 values: new object[,]
                 {
                     { 1, 75000, "Standard", true, 790, null, "John", 0.085000000000000006, "Smith", 125000.0, 30, 769.64999999999998 },
-                    { 2, 60000, "Standard", true, 680, null, "Mary", 0.074999999999999997, "Jones", 135000.0, 30, 934.94000000000005 },
-                    { 4, 125000, "Standard", true, 880, null, "Sally", 0.050000000000000003, "Johnson", 250000.0, 20, 1684.6099999999999 },
-                    { 5, 75000, "Standard", true, 790, null, "John", 0.074999999999999997, "Test", 125000.0, 30, 769.64999999999998 },
-                    { 6, 60000, "Standard", true, 680, null, "Jeff", 0.0625, "Pral", 135000.0, 10, 934.94000000000005 },
-                    { 7, 100000, "Standard", false, 460, "Credit Score", "Steve", null, "Sun", 0.0, 30, null },
-                    { 8, 125000, "Premiere", true, 880, null, "Alan", 0.17499999999999999, "Roll", 250000.0, 20, 1684.6099999999999 },
-                    { 9, 75000, "Premiere", true, 790, null, "Bob", 0.14999999999999999, "Stevens", 25000.0, 10, 769.64999999999998 },
-                    { 3, 100000, "Standard", false, 460, "Credit Score", "Andy", null, "Anderson", 0.0, 30, null },
-                    { 10, 60000, "Standard", true, 680, null, "Phil", 0.074999999999999997, "Tell", 135000.0, 20, 934.94000000000005 },
+                    { 12, 125000, "Standard", true, 880, null, "Bob", 0.050000000000000003, "Test", 250000.0, 20, 1684.6099999999999 },
                     { 11, 100000, "Standard", false, 406, "Credit Score", "Joel", null, "Tess", 0.0, 30, null },
-                    { 12, 125000, "Standard", true, 880, null, "Bob", 0.050000000000000003, "Test", 250000.0, 20, 1684.6099999999999 }
+                    { 10, 60000, "Standard", true, 680, null, "Phil", 0.074999999999999997, "Tell", 135000.0, 20, 934.94000000000005 },
+                    { 9, 75000, "Premiere", true, 790, null, "Bob", 0.14999999999999999, "Stevens", 25000.0, 10, 769.64999999999998 },
+                    { 8, 125000, "Premiere", true, 880, null, "Alan", 0.17499999999999999, "Roll", 250000.0, 20, 1684.6099999999999 },
+                    { 3, 100000, "Standard", false, 460, "Credit Score", "Andy", null, "Anderson", 0.0, 30, null },
+                    { 6, 60000, "Standard", true, 680, null, "Jeff", 0.0625, "Pral", 135000.0, 10, 934.94000000000005 },
+                    { 5, 75000, "Standard", true, 790, null, "John", 0.074999999999999997, "Test", 125000.0, 30, 769.64999999999998 },
+                    { 4, 125000, "Standard", true, 880, null, "Sally", 0.050000000000000003, "Johnson", 250000.0, 20, 1684.6099999999999 },
+                    { 2, 60000, "Standard", true, 680, null, "Mary", 0.074999999999999997, "Jones", 135000.0, 30, 934.94000000000005 },
+                    { 7, 100000, "Standard", false, 460, "Credit Score", "Steve", null, "Sun", 0.0, 30, null }
                 });
 
             migrationBuilder.InsertData(
@@ -89,8 +89,12 @@ namespace LoanCalculator.Data.EFCore.Migrations
                 columns: new[] { "LoanTypeId", "LoanTypeName" },
                 values: new object[,]
                 {
-                    { 1, "car" },
-                    { 2, "school" }
+                    { 5, "Business Loan" },
+                    { 1, "Car Loan" },
+                    { 2, "Education Loan" },
+                    { 3, "Home Loan" },
+                    { 4, "Personal Loan" },
+                    { 6, "Gold Loan" }
                 });
 
             migrationBuilder.InsertData(
@@ -102,7 +106,7 @@ namespace LoanCalculator.Data.EFCore.Migrations
                     { 3, 0.074999999999999997, 1, 600, 699 },
                     { 1, 0.10000000000000001, 2, 300, 499 },
                     { 4, 0.0625, 2, 700, 799 },
-                    { 5, 0.050000000000000003, 2, 800, 850 }
+                    { 5, 0.050000000000000003, 2, 800, 900 }
                 });
 
             migrationBuilder.CreateIndex(

@@ -56,22 +56,32 @@ namespace LoanCalculator.RazorPages.Pages
             {
                 new MarketRate()
                 {
-                    Label = "Auto",
+                    Label = "Car Loan",
                     MinRate = .02
                 },
                 new MarketRate()
                 {
-                    Label = "Home",
+                    Label = "Home Loan",
                     MinRate = .04
                 },
                 new MarketRate()
                 {
-                    Label = "Personal",
+                    Label = "Personal Loan",
                     MinRate = .05
                 },
                 new MarketRate()
                 {
-                    Label = "Education",
+                    Label = "Education Loan",
+                    MinRate = .06
+                },
+                new MarketRate()
+                {
+                    Label = "Business Loan",
+                    MinRate = .06
+                },
+                new MarketRate()
+                {
+                    Label = "Gold Loan",
                     MinRate = .06
                 }
             };

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoanCalculator.Data.EFCore.Migrations
 {
     [DbContext(typeof(LoanCalculatorContext))]
-    [Migration("20191224100740_Initial")]
+    [Migration("20191231085315_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -280,7 +280,7 @@ namespace LoanCalculator.Data.EFCore.Migrations
                             InterestRate = 0.050000000000000003,
                             LoanTypeId = 2,
                             LowerCreditScore = 800,
-                            UpperCreditScore = 850
+                            UpperCreditScore = 900
                         });
                 });
 
@@ -300,12 +300,32 @@ namespace LoanCalculator.Data.EFCore.Migrations
                         new
                         {
                             LoanTypeId = 1,
-                            LoanTypeName = "car"
+                            LoanTypeName = "Car Loan"
                         },
                         new
                         {
                             LoanTypeId = 2,
-                            LoanTypeName = "school"
+                            LoanTypeName = "Education Loan"
+                        },
+                        new
+                        {
+                            LoanTypeId = 3,
+                            LoanTypeName = "Home Loan"
+                        },
+                        new
+                        {
+                            LoanTypeId = 4,
+                            LoanTypeName = "Personal Loan"
+                        },
+                        new
+                        {
+                            LoanTypeId = 5,
+                            LoanTypeName = "Business Loan"
+                        },
+                        new
+                        {
+                            LoanTypeId = 6,
+                            LoanTypeName = "Gold Loan"
                         });
                 });
 
