@@ -57,8 +57,12 @@ namespace LoanCalculator.Data.EFCore
         private void SeedData(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<LoanType>().HasData(
-                new LoanType() { LoanTypeId = 1, LoanTypeName = "car" },
-                new LoanType() { LoanTypeId = 2, LoanTypeName = "school" }
+                new LoanType() { LoanTypeId = 1, LoanTypeName = "Car Loan" },
+                new LoanType() { LoanTypeId = 2, LoanTypeName = "Education Loan" },
+                new LoanType() { LoanTypeId = 3, LoanTypeName = "Home Loan" },
+                new LoanType() { LoanTypeId = 4, LoanTypeName = "Personal Loan" },
+                new LoanType() { LoanTypeId = 5, LoanTypeName = "Business Loan" },
+                new LoanType() { LoanTypeId = 6, LoanTypeName = "Gold Loan" }
             );
 
             modelBuilder.Entity<LoanRate>().HasData(
@@ -66,7 +70,7 @@ namespace LoanCalculator.Data.EFCore
                 new LoanRate() { LoanTypeId = 1, LoanRateId = 2, LowerCreditScore = 500, UpperCreditScore = 599, InterestRate = 0.085 },
                 new LoanRate() { LoanTypeId = 1, LoanRateId = 3, LowerCreditScore = 600, UpperCreditScore = 699, InterestRate = 0.075 },
                 new LoanRate() { LoanTypeId = 2, LoanRateId = 4, LowerCreditScore = 700, UpperCreditScore = 799, InterestRate = 0.0625 },
-                new LoanRate() { LoanTypeId = 2, LoanRateId = 5, LowerCreditScore = 800, UpperCreditScore = 850, InterestRate = 0.05 }
+                new LoanRate() { LoanTypeId = 2, LoanRateId = 5, LowerCreditScore = 800, UpperCreditScore = 900, InterestRate = 0.05 }
             );
 
             modelBuilder.Entity<LoanApplicationResult>().HasData(
