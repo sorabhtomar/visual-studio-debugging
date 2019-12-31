@@ -4,6 +4,16 @@
         "serverSide": true,
         "ajax": '/loans',
         "rowId": "resultId",
+        "columnDefs": [{
+            "targets": [3],
+            "render": function (data, type, row) {
+                return Number(data).toLocaleString('en-IN', {
+                    maximumFractionDigits: 2,
+                    style: 'currency',
+                    currency: 'INR'
+                });
+            }
+        }],
         "columns": [
             { "data": "resultId" },
             { "data": "firstName" },
