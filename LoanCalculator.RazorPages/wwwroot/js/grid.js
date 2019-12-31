@@ -4,16 +4,24 @@
         "serverSide": true,
         "ajax": '/loans',
         "rowId": "resultId",
-        "columnDefs": [{
-            "targets": [3],
-            "render": function (data, type, row) {
-                return Number(data).toLocaleString('en-IN', {
-                    maximumFractionDigits: 2,
-                    style: 'currency',
-                    currency: 'INR'
-                });
+        "columnDefs": [
+            {
+                "targets": [3],
+                "render": function (data, type, row) {
+                    return Number(data).toLocaleString('en-IN', {
+                        maximumFractionDigits: 2,
+                        style: 'currency',
+                        currency: 'INR'
+                    });
+                }
+            },
+            {
+                "targets": [4],
+                "render": function (data, type, row) {
+                    return data ? "Approved" : "Denied";
+                }
             }
-        }],
+        ],
         "columns": [
             { "data": "resultId" },
             { "data": "firstName" },
